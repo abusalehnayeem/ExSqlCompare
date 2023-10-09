@@ -30,13 +30,14 @@
         {
             SuspendLayout();
             // 
-            // Form1
+            // frmMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Name = "frmMain";
             Text = "ExSqlCompare-Main";
+            Load += frmMain_Load;
             ResumeLayout(false);
         }
 
