@@ -36,11 +36,20 @@
             serverWindowsAuthenticationRadioButton = new RadioButton();
             serverTableLayoutPanel = new TableLayoutPanel();
             serverHeaderPanel = new Panel();
-            panel1 = new Panel();
+            serverMiddlePanel = new Panel();
+            serverFooterPanel = new Panel();
+            databaseGroupBox = new GroupBox();
+            selectDatabaseComboBox = new ComboBox();
+            selectDatabaseRadioButton = new RadioButton();
+            serverLoginTableLayoutPanel = new TableLayoutPanel();
+            label1 = new Label();
             logonGroupBox.SuspendLayout();
             serverTableLayoutPanel.SuspendLayout();
             serverHeaderPanel.SuspendLayout();
-            panel1.SuspendLayout();
+            serverMiddlePanel.SuspendLayout();
+            serverFooterPanel.SuspendLayout();
+            databaseGroupBox.SuspendLayout();
+            serverLoginTableLayoutPanel.SuspendLayout();
             SuspendLayout();
             // 
             // serverNameLabel
@@ -56,6 +65,8 @@
             // 
             // serverComboBox
             // 
+            serverComboBox.AutoCompleteMode = AutoCompleteMode.Append;
+            serverComboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
             serverComboBox.FormattingEnabled = true;
             serverComboBox.Location = new Point(3, 3);
             serverComboBox.Name = "serverComboBox";
@@ -73,6 +84,7 @@
             // 
             // logonGroupBox
             // 
+            logonGroupBox.Controls.Add(serverLoginTableLayoutPanel);
             logonGroupBox.Controls.Add(radioButton1);
             logonGroupBox.Controls.Add(serverWindowsAuthenticationRadioButton);
             logonGroupBox.FlatStyle = FlatStyle.System;
@@ -80,7 +92,7 @@
             logonGroupBox.Margin = new Padding(0, 4, 0, 4);
             logonGroupBox.Name = "logonGroupBox";
             logonGroupBox.Padding = new Padding(4);
-            logonGroupBox.Size = new Size(575, 226);
+            logonGroupBox.Size = new Size(575, 261);
             logonGroupBox.TabIndex = 3;
             logonGroupBox.TabStop = false;
             logonGroupBox.Text = "Log on to the server";
@@ -140,28 +152,115 @@
             serverHeaderPanel.Size = new Size(590, 67);
             serverHeaderPanel.TabIndex = 4;
             // 
-            // panel1
+            // serverMiddlePanel
             // 
-            panel1.Controls.Add(logonGroupBox);
-            panel1.Location = new Point(0, 82);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(587, 389);
-            panel1.TabIndex = 5;
+            serverMiddlePanel.Controls.Add(logonGroupBox);
+            serverMiddlePanel.Dock = DockStyle.Top;
+            serverMiddlePanel.Location = new Point(0, 67);
+            serverMiddlePanel.Name = "serverMiddlePanel";
+            serverMiddlePanel.Size = new Size(590, 269);
+            serverMiddlePanel.TabIndex = 5;
+            // 
+            // serverFooterPanel
+            // 
+            serverFooterPanel.AutoSize = true;
+            serverFooterPanel.Controls.Add(databaseGroupBox);
+            serverFooterPanel.Dock = DockStyle.Top;
+            serverFooterPanel.Location = new Point(0, 336);
+            serverFooterPanel.Margin = new Padding(12, 0, 36, 4);
+            serverFooterPanel.Name = "serverFooterPanel";
+            serverFooterPanel.Padding = new Padding(0, 4, 0, 0);
+            serverFooterPanel.Size = new Size(590, 122);
+            serverFooterPanel.TabIndex = 6;
+            // 
+            // databaseGroupBox
+            // 
+            databaseGroupBox.AutoSize = true;
+            databaseGroupBox.Controls.Add(selectDatabaseComboBox);
+            databaseGroupBox.Controls.Add(selectDatabaseRadioButton);
+            databaseGroupBox.Dock = DockStyle.Top;
+            databaseGroupBox.FlatStyle = FlatStyle.System;
+            databaseGroupBox.Location = new Point(0, 4);
+            databaseGroupBox.Name = "databaseGroupBox";
+            databaseGroupBox.Padding = new Padding(4);
+            databaseGroupBox.Size = new Size(590, 118);
+            databaseGroupBox.TabIndex = 0;
+            databaseGroupBox.TabStop = false;
+            databaseGroupBox.Text = "Connect to a database";
+            // 
+            // selectDatabaseComboBox
+            // 
+            selectDatabaseComboBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            selectDatabaseComboBox.AutoCompleteMode = AutoCompleteMode.Append;
+            selectDatabaseComboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
+            selectDatabaseComboBox.FlatStyle = FlatStyle.System;
+            selectDatabaseComboBox.FormattingEnabled = true;
+            selectDatabaseComboBox.Location = new Point(34, 62);
+            selectDatabaseComboBox.Margin = new Padding(36, 0, 12, 4);
+            selectDatabaseComboBox.Name = "selectDatabaseComboBox";
+            selectDatabaseComboBox.Size = new Size(531, 28);
+            selectDatabaseComboBox.TabIndex = 2;
+            // 
+            // selectDatabaseRadioButton
+            // 
+            selectDatabaseRadioButton.AutoSize = true;
+            selectDatabaseRadioButton.FlatStyle = FlatStyle.System;
+            selectDatabaseRadioButton.Location = new Point(11, 35);
+            selectDatabaseRadioButton.Margin = new Padding(12, 11, 12, 0);
+            selectDatabaseRadioButton.Name = "selectDatabaseRadioButton";
+            selectDatabaseRadioButton.Size = new Size(256, 25);
+            selectDatabaseRadioButton.TabIndex = 1;
+            selectDatabaseRadioButton.TabStop = true;
+            selectDatabaseRadioButton.Text = "Select or enter a &database name:";
+            selectDatabaseRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // serverLoginTableLayoutPanel
+            // 
+            serverLoginTableLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            serverLoginTableLayoutPanel.ColumnCount = 2;
+            serverLoginTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            serverLoginTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            serverLoginTableLayoutPanel.Controls.Add(label1, 0, 0);
+            serverLoginTableLayoutPanel.Location = new Point(7, 103);
+            serverLoginTableLayoutPanel.Name = "serverLoginTableLayoutPanel";
+            serverLoginTableLayoutPanel.RowCount = 3;
+            serverLoginTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            serverLoginTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            serverLoginTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            serverLoginTableLayoutPanel.Size = new Size(554, 125);
+            serverLoginTableLayoutPanel.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
             // 
             // ExSqlDbConnectionBox
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel1);
+            AutoSize = true;
+            Controls.Add(serverFooterPanel);
+            Controls.Add(serverMiddlePanel);
             Controls.Add(serverHeaderPanel);
             Name = "ExSqlDbConnectionBox";
-            Size = new Size(590, 948);
+            Size = new Size(590, 462);
             logonGroupBox.ResumeLayout(false);
             logonGroupBox.PerformLayout();
             serverTableLayoutPanel.ResumeLayout(false);
             serverHeaderPanel.ResumeLayout(false);
             serverHeaderPanel.PerformLayout();
-            panel1.ResumeLayout(false);
+            serverMiddlePanel.ResumeLayout(false);
+            serverFooterPanel.ResumeLayout(false);
+            serverFooterPanel.PerformLayout();
+            databaseGroupBox.ResumeLayout(false);
+            databaseGroupBox.PerformLayout();
+            serverLoginTableLayoutPanel.ResumeLayout(false);
+            serverLoginTableLayoutPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -176,6 +275,12 @@
         private RadioButton serverWindowsAuthenticationRadioButton;
         private RadioButton radioButton1;
         private Panel serverHeaderPanel;
-        private Panel panel1;
+        private Panel serverMiddlePanel;
+        private Panel serverFooterPanel;
+        private GroupBox databaseGroupBox;
+        private RadioButton selectDatabaseRadioButton;
+        private ComboBox selectDatabaseComboBox;
+        private TableLayoutPanel serverLoginTableLayoutPanel;
+        private Label label1;
     }
 }
