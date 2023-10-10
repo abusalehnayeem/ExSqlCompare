@@ -34,9 +34,16 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            MaximizeBox = false;
             Name = "frmMain";
+            ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ExSqlCompare-Main";
+            WindowState = FormWindowState.Maximized;
             Load += frmMain_Load;
             ResumeLayout(false);
         }

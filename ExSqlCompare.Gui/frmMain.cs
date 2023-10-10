@@ -15,6 +15,7 @@ public partial class frmMain : Form
         //https://github.com/OpenDBDiff/OpenDBDiff
         //https://www.codeproject.com/Articles/21186/SQL-Connection-Dialog
         //https://www.codeproject.com/Articles/892233/POCO-Generator
+        //https://www.codeproject.com/Articles/205011/SQL-Server-Database-Comparison-Tool
     }
 
     #endregion
